@@ -8,20 +8,30 @@
 </head>
 <body>
     <div class="game-container">
-        <div id="scoreBoard">
-            <span id="currentScore">Current Score: 0</span>
+        <div id="scoreArea">
+            <div id="scoreBoard">
+                <span id="currentScore">Current Score: 0</span>
+                <span id="highScore">Highest Score: 0</span>
+            </div>
             <div id="progressContainer">
                 <div id="progressBar"></div>
             </div>
-            <span id="highScore">Highest Score: 0</span>
         </div>
-        <div class="canvas-container">
+        <div class="canvas-wrapper">
             <canvas id="gameCanvas"></canvas>
+            <button id="startGameBtn" onclick="startGame()">Start Game</button>
         </div>
-        <button id="newGameBtn" onclick="startNewGame()">New Game</button>
-        <button id="startGameBtn" onclick="startGame()">Start Game</button>
+        <div class="button-container">
+            <button id="newGameBtn" onclick="startNewGame()">New Game</button>
+            <button id="restartGameBtn" onclick="restartGame()">Restart Game</button>
+        </div>
     </div>
-    <button id="restartGameBtn" onclick="restartGame()">Restart Game</button>
+    <div class="controls">
+        <button id="upButton" onclick="changeDirection('UP')">▲</button>
+        <button id="leftButton" onclick="changeDirection('LEFT')">◀</button>
+        <button id="rightButton" onclick="changeDirection('RIGHT')">▶</button>
+        <button id="downButton" onclick="changeDirection('DOWN')">▼</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
