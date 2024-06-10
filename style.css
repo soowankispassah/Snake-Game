@@ -204,6 +204,10 @@ canvas {
         transform: scale(0.95); /* Scale down for mobile view */
     }
 
+    .button-container {
+        margin-top: -10px; /* Move closer to the canvas */
+    }
+
     #scoreBoard {
         padding: 0 2%; /* Adjust padding to match playground border */
     }
