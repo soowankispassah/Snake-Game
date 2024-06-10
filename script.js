@@ -80,10 +80,24 @@ function restartGame() {
 document.addEventListener('keydown', setDirection);
 
 // Add touch event listeners
-document.getElementById('upArea').addEventListener('touchstart', () => changeDirection('UP'));
-document.getElementById('downArea').addEventListener('touchstart', () => changeDirection('DOWN'));
-document.getElementById('leftArea').addEventListener('touchstart', () => changeDirection('LEFT'));
-document.getElementById('rightArea').addEventListener('touchstart', () => changeDirection('RIGHT'));
+document.getElementById('upArea').addEventListener('touchstart', handleTouchStart, false);
+document.getElementById('downArea').addEventListener('touchstart', handleTouchStart, false);
+document.getElementById('leftArea').addEventListener('touchstart', handleTouchStart, false);
+document.getElementById('rightArea').addEventListener('touchstart', handleTouchStart, false);
+
+function handleTouchStart(event) {
+    event.preventDefault();
+    const touch = event.target.id;
+    if (touch === 'upArea') {
+        changeDirection('UP');
+    } else if (touch === 'downArea') {
+        changeDirection('DOWN');
+    } else if (touch === 'leftArea') {
+        changeDirection('LEFT');
+    } else if (touch === 'rightArea') {
+        changeDirection('RIGHT');
+    }
+}
 
 function setDirection(event) {
     if (!isGameRunning) return; // Ignore input if the game is not running
