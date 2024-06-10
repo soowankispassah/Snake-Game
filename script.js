@@ -79,6 +79,12 @@ function restartGame() {
 
 document.addEventListener('keydown', setDirection);
 
+// Add touch event listeners
+document.getElementById('upArea').addEventListener('touchstart', () => changeDirection('UP'));
+document.getElementById('downArea').addEventListener('touchstart', () => changeDirection('DOWN'));
+document.getElementById('leftArea').addEventListener('touchstart', () => changeDirection('LEFT'));
+document.getElementById('rightArea').addEventListener('touchstart', () => changeDirection('RIGHT'));
+
 function setDirection(event) {
     if (!isGameRunning) return; // Ignore input if the game is not running
 
