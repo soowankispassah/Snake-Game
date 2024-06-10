@@ -153,31 +153,6 @@ canvas {
     transform: scale(1.1);
 }
 
-#upButton {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#downButton {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#leftButton {
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#rightButton {
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Invisible larger hit areas for touch zones */
 #upArea, #downArea, #leftArea, #rightArea {
     position: absolute;
     background-color: transparent;
@@ -221,7 +196,7 @@ canvas {
 @media (max-width: 768px) {
     .controls {
         display: flex;
-        margin-top: 60px;
+        margin-top: 40px; /* Adjusted margin-top for mobile view */
     }
 
     .canvas-wrapper {
