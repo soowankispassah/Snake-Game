@@ -177,10 +177,51 @@ canvas {
     transform: translateY(-50%);
 }
 
+/* Invisible larger hit areas for touch zones */
+#upArea, #downArea, #leftArea, #rightArea {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    z-index: 1;
+}
+
+#upArea {
+    top: -50px; /* Stretch upwards */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+#downArea {
+    bottom: -50px; /* Stretch downwards */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+#leftArea {
+    left: -50px; /* Stretch leftwards */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+#rightArea {
+    right: -50px; /* Stretch rightwards */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+}
+
 /* Show controls only on mobile devices */
 @media (max-width: 768px) {
     .controls {
         display: flex;
+        margin-top: 60px;
     }
 
     .canvas-wrapper {
